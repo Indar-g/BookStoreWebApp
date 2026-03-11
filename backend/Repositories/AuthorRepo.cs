@@ -64,6 +64,17 @@ namespace BookStore.Repositories
             return await _context.Authors.Include(a => a.Books).ThenInclude(b => b.Reviews).FirstOrDefaultAsync(a => a.Name.ToLower()  == name.ToLower());
         }
 
+        public async Task<string> GetNameById(int id)
+        {
+            string? authorName = null;
+
+            var author = await _context.Authors.FirstOrDefaultAsync(a => a.Id == id);
+
+            authorName = author.Name; // null не будет потому что у нас в контроллере Book уже идёт проверка Id перед назначением имени автора книге
+
+            return authorName;
+        }
+
         public async Task<Author?> UpdateAsync(int id, UpdateAuthorRequestDTO authorDTO)
         {
             var existingAuthor = await _context.Authors.FirstOrDefaultAsync(a => a.Id == id);

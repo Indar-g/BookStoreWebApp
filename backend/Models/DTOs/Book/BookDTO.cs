@@ -9,6 +9,7 @@ namespace BookStore.Models.DTOs.Book
         public string Genre { get; set; } = string.Empty;
         public decimal Price { get; set; }
         public string? BookImage { get; set; }
+        public string AuthorName {get; set; } = string.Empty;
 
         public int AuthorId { get; set; }
         public List<ReviewDTO> Reviews { get; set; } = new List<ReviewDTO>();

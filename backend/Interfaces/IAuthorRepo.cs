@@ -13,5 +13,6 @@ namespace BookStore.Interfaces
         Task<bool> Exists(string name);
         Task<bool> ExistsById(int id);
         Task<Author?> GetByIdAsync(int id);
+        Task<string> GetNameById(int id);
     }
 }

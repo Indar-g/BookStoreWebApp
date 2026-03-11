@@ -15,6 +15,7 @@ namespace BookStore.Models.DTOs.Book
         public decimal Price { get; set; }
         
         public int AuthorId { get; set; }
+        public string AuthorName {get; set; } = string.Empty;
 
         public IFormFile? BookImage { get; set; }
     }

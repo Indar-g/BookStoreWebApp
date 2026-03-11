@@ -14,6 +14,7 @@ namespace BookStore.Mappers
                 Genre = bookModel.Genre,
                 Price = bookModel.Price,
                 AuthorId = bookModel.AuthorId,
+                AuthorName = bookModel.AuthorName,
                 BookImage = bookModel.BookImage,
                 Reviews = bookModel.Reviews.Select(r => r.ToReviewDTO()).ToList()
             };
@@ -26,6 +27,7 @@ namespace BookStore.Mappers
                 Genre = bookDTO.Genre,
                 Price = bookDTO.Price,
                 AuthorId= bookDTO.AuthorId,
+                AuthorName = bookDTO.AuthorName,
                 BookImage = null
             };
         }

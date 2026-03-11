@@ -14,6 +14,7 @@ namespace BookStore.Models.Entities
 
         public Author? Author { get; set; }
         public int AuthorId { get; set; }
+        public string AuthorName {get; set;} = string.Empty;
 
         public List<Review> Reviews { get; set; } = new List<Review>();
         public List<Cart> Carts { get; set; } = new List<Cart>();

@@ -2,6 +2,7 @@
 using BookStore.Interfaces;
 using BookStore.Mappers;
 using BookStore.Models.DTOs.Book;
+using BookStore.Models.Entities;
 using BookStore.Models.Paging;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -51,6 +52,16 @@ namespace BookStore.Controllers
 
             var bookModel = dto.ToBookFromCreateDTO();
             bookModel.BookImage = imagePath;
+
+            //нужно сделать так чтобы при создании книги и указывании айди автора сразу давалось его имя в значение авторнейм
+            var authorNameResultFromBD = _authorRepo.GetNameById(dto.AuthorId);
+
+            if(authorNameResultFromBD is null)
+            {
+                return NotFound("Автор не найден");
+            }
+
+            bookModel.AuthorName = await authorNameResultFromBD;
 
             await _bookRepo.CreateAsync(bookModel);
 
