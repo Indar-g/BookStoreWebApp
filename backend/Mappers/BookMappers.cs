@@ -13,6 +13,7 @@ namespace BookStore.Mappers
                 Title = bookModel.Title,
                 Genre = bookModel.Genre,
                 Price = bookModel.Price,
+                Description = bookModel.Description,
                 AuthorId = bookModel.AuthorId,
                 AuthorName = bookModel.AuthorName,
                 BookImage = bookModel.BookImage,
@@ -25,6 +26,7 @@ namespace BookStore.Mappers
             {
                 Title = bookDTO.Title,
                 Genre = bookDTO.Genre,
+                Description = bookDTO.Description,
                 Price = bookDTO.Price,
                 AuthorId= bookDTO.AuthorId,
                 AuthorName = bookDTO.AuthorName,
@@ -37,6 +39,7 @@ namespace BookStore.Mappers
             {
                 Title = bookDTO.Title,
                 Genre = bookDTO.Genre,
+                Description = bookDTO.Description,
                 Price = bookDTO.Price,
                 AuthorId = bookDTO.AuthorId,
             };

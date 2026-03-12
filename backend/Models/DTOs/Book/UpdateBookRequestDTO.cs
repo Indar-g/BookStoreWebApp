@@ -9,6 +9,7 @@ namespace BookStore.Models.DTOs.Book
         [MaxLength(30, ErrorMessage = "Название должно быть не более 30 символов")]
         public string Title { get; set; } = string.Empty;
         public string Genre { get; set; } = string.Empty;
+        public string Description {get; set; } = string.Empty;
         [Required]
         [Range(-9999, 100000)]
         public decimal Price { get; set; }
